@@ -1,7 +1,8 @@
 {
   "name": "app",
   "private": "true",
-  "registry": "https://registry.yarnpkg.com/",  "scripts": {
+  "registry": "https://registry.yarnpkg.com/",
+  "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   },
