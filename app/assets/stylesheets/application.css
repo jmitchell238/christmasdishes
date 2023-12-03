@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'tailwind';
+@import 'inter-font';
+
+.bg-christmas-gradient {
+    background: linear-gradient(to bottom, #ff0000, #00ff00, #0000ff);
+  }

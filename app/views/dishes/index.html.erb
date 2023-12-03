@@ -1,0 +1,30 @@
+<!-- app/views/dishes/index.html.erb -->
+
+<!-- app/views/dishes/index.html.erb -->
+<h1>All Dishes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Dish</th>
+      <th>Comments</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <tr>
+        <td><%= dish.name %></td>
+        <td><%= dish.dish %></td>
+        <td><%= dish.comments %></td>
+        <td><%= link_to 'Show', dish %></td>
+        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
+        <td><%= link_to 'Delete', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Dish', new_dish_path %>

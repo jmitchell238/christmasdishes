@@ -1,0 +1,14 @@
+<!-- app/views/welcome/index.html.erb -->
+<div class="flex items-center justify-center h-screen w-full">
+    <div class="container mx-auto p-8 text-center text-black bg-white bg-opacity-50 rounded-lg">
+        <h1 class="text-4xl font-bold mb-8">Welcome to the Mitchell Friends Christmas Party!</h1>
+  
+        <% if @dishes.present? %>
+            <%= render 'dishes/dishes_table', dishes: @dishes %>
+        <% else %>
+            <p class="mb-8">Currently, no dishes have been added.</p>
+        <% end %>
+  
+        <p>Sign up to bring a dish <%= link_to 'HERE', new_dish_path %>.</p>
+    </div>
+</div>
