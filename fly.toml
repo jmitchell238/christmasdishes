@@ -8,6 +8,8 @@ primary_region = "atl"
 console_command = "/rails/bin/rails console"
 
 [build]
+  dockerfile = "Dockerfile"
+
 
 [deploy]
   release_command = "./bin/rails db:prepare"
