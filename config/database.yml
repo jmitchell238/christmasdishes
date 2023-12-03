@@ -33,6 +33,8 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: christmasdishes_db_production
-  username: christmasdishes
+  database: christmasdishes-db
+  host: christmasdishes-db.internal
+  username: postgres
   password: <%= ENV["DATABASE_PASSWORD"] %>
+  port: 5433
