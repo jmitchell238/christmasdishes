@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for christmasdishes on 2023-12-02T20:14:44-06:00
+# fly.toml app configuration file generated for christmasdishes on 2023-12-03T21:22:33-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -8,8 +8,6 @@ primary_region = "atl"
 console_command = "/rails/bin/rails console"
 
 [build]
-  dockerfile = "Dockerfile"
-
 
 [deploy]
   release_command = "./bin/rails db:prepare"
