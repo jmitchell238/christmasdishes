@@ -5,9 +5,11 @@ ARG RUBY_VERSION=3.2.2
 FROM base as build
 
 # Install `curl` for downloading Node.js installation files
-# Install PostgreSQL client development package
 RUN apt-get update -qq && \
     apt-get install -y curl \
+
+# Install PostgreSQL client development package
+RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y libpq-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
