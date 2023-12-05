@@ -4,11 +4,6 @@ class DishesController < ApplicationController
 
   def index
     @dishes = Dish.all
-    puts "Dishes: #{Dish.all.inspect}"
-  end
-
-  def show
-    # The set_dish before_action ensures @dish is set
   end
 
   def new
@@ -17,10 +12,6 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    puts "Dish params: #{dish_params.inspect}"
-    puts "I'm trying to see if sqllite3 works."
-    puts @dish.inspect
-    puts Dish.all.inspect
 
     if @dish.save
       flash[:success] = 'Dish successfully submitted!'
@@ -43,10 +34,23 @@ class DishesController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
+    @dish = Dish.find(params[:id])
+
+    puts "I'm trying to delete a dish."
     @dish.destroy
-    flash[:success] = 'Dish successfully deleted!'
-    redirect_to dishes_path
+  end
+
+  def destroy
+    @dish = Dish.find(params[:id])
+
+    puts "I'm trying to destroy a dish."
+    if @dish.destroy
+      puts "I'm trying to destroy a dish."
+      redirect_to welcome_index_path, notice: 'Dish deleted.'
+    else
+      redirect_to welcome_index_path, notice: 'Dish could not be deleted.'
+    end
   end
 
   private
