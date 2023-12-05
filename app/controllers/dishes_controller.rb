@@ -31,7 +31,7 @@ class DishesController < ApplicationController
   end
 
   def edit
-    # The set_dish before_action ensures @dish is set
+    @dish = Dish.find(params[:id])
   end
 
   def update

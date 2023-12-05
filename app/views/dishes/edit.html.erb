@@ -1,0 +1,38 @@
+<!-- app/dishes/edit.html.erb -->
+
+<div class="flex items-center justify-center w-full">
+  <div class="container mx-auto text-center text-black bg-white bg-opacity-50 rounded-lg">
+
+    <div class="flex bg-white bg-opacity-50 w-full">
+      <%= render 'dishes/edit_dish_breadcrumbs', class: 'text-black' %>
+    </div>
+
+    <div class="container mx-auto p-4">
+      <h1 class="text-4xl font-bold mb-4">Edit This Dish</h1>
+      <p class="mb-8">Edit the dish details below:</p>
+
+      <%= form_with model: @dish, url: dish_path, class: "mb-8" do |form| %>
+        <div class="mb-4">
+          <%= form.label :name, 'Your Name', class: 'block text-sm font-bold mb-2=' %>
+          <%= form.text_field :name, class: "px-3 py-2 border rounded-md w-5/6 md:w-1/2" %>
+        </div>
+
+        <div class="mb-4">
+          <%= form.label :dish, 'Dish You\'re Bringing', class: "block text-sm font-bold mb-2" %>
+          <%= form.text_field :dish, class: "px-3 py-2 border rounded-md w-5/6 md:w-1/2" %>
+        </div>
+
+        <div class="mb-4">
+          <%= form.label :comments, 'Additional Comments', class: "block text-sm font-bold mb-2" %>
+          <%= form.text_area :comments, class: "px-3 py-2 border rounded-md w-5/6 md:w-1/2" %>
+        </div>
+
+        <div>
+          <%= form.submit 'Submit', class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" %>
+        </div>
+      <% end %>
+    </div>
+
+
+  </div>
+</div>

@@ -6,7 +6,9 @@
       <%= render 'welcome/welcome_breadcrumb', class: 'text-black' %>
     </div>
 
-    <h1 class="text-4xl font-bold mb-8">Welcome to the Mitchell Friends Christmas Party!</h1>
+    <h1 class="text-4xl font-bold mb-8 pt-4">Welcome to the Mitchell Friends Christmas Party!</h1>
+
+    <p class="pb-8 pt-2">Sign up to bring a dish <%= link_to 'HERE', new_dish_path, class: 'text-blue-500 font-semibold' %>.</p>
 
     <% if @dishes.present? %>
       <div class="items-center">
