@@ -1,28 +1,29 @@
 <!-- app/views/dishes/_dishes_table.html.erb -->
-<h1>All Dishes</h1>
-
-<table>
+<h1 class="text-4xl pb-2">Current Dishes</h1>
+<table class="table-auto divide-y-[3px] divide-gray-500 w-full md:w-full">
   <thead>
     <tr>
       <th>Name</th>
       <th>Dish</th>
-      <th>Comments</th>
-      <th colspan="2">Actions</th>
     </tr>
   </thead>
 
+
   <tbody>
     <% @dishes.each do |dish| %>
-      <tr>
-        <td><%= dish.name %></td>
-        <td><%= dish.dish %></td>
-        <td><%= dish.comments %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Delete', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% bg_class = cycle('bg-gray-300', 'bg-gray-100') %>
+      <tr class="<%= bg_class %> pb-4">
+        <td class="align-top pb-4 font-bold"><%= dish.name %></td>
+        <td class="align-top pb-4"><%= dish.dish %></td>
       </tr>
+
+      <tr class="<%= bg_class %> pb-8">
+        <td class="break-words left-0 pb-8"><p class="font-semibold underline">Additional comments:</p> <%= dish.comments %></td>
+        <td class="text-blue-500 font-semibold pb-8"><%= link_to 'Edit', edit_dish_path(dish) %></td>
+      </tr>
+<%# bg_class = cycle('bg-gray-100', 'bg-gray-300') %>
     <% end %>
   </tbody>
-</table>
 
-<%= link_to 'New Dish', new_dish_path %>
+
+</table>

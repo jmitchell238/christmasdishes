@@ -4,6 +4,7 @@ class DishesController < ApplicationController
 
   def index
     @dishes = Dish.all
+    puts "Dishes: #{Dish.all.inspect}"
   end
 
   def show
@@ -16,6 +17,10 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
+    puts "Dish params: #{dish_params.inspect}"
+    puts "I'm trying to see if sqllite3 works."
+    puts @dish.inspect
+    puts Dish.all.inspect
 
     if @dish.save
       flash[:success] = 'Dish successfully submitted!'

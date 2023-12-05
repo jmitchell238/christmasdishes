@@ -1,21 +1,38 @@
 <!-- app/dishes/new.html.erb -->
 
-<div class="container mx-auto p-4">
+<div class="flex items-center justify-center w-full">
+  <div class="container mx-auto text-center text-black bg-white bg-opacity-50 rounded-lg">
 
-    <h1 class="text-4xl font-bold mb-4">Sign Up to Bring a Dish</h1>
-    <p class="mb-8">Enter your details below:</p>
+    <div class="flex bg-white bg-opacity-50 w-full">
+      <%= render 'dishes/new_dish_breadcrumbs', class: 'text-black' %>
+    </div>
 
-    <%= form_with model: Dish.new, url: dishes_path, method: 'post', class: "mb-8" do |form| %>
-    <%= form.label :name, 'Your Name' %>
-    <%= form.text_field :name %>
+    <div class="container mx-auto p-4">
+      <h1 class="text-4xl font-bold mb-4">Sign Up to Bring a Dish</h1>
+      <p class="mb-8">Enter your details below:</p>
 
-    <%= form.label :dish, 'Dish You\'re Bringing' %>
-    <%= form.text_field :dish %>
+      <%= form_with model: Dish.new, url: dishes_path, method: 'post', class: "mb-8" do |form| %>
+        <div class="mb-4">
+          <%= form.label :name, 'Your Name', class: 'block text-sm font-bold mb-2=' %>
+          <%= form.text_field :name, class: "px-3 py-2 border rounded-md w-5/6 md:w-1/2" %>
+        </div>
 
-    <%= form.label :comments, 'Additional Comments' %>
-    <%= form.text_area :comments %>
+        <div class="mb-4">
+          <%= form.label :dish, 'Dish You\'re Bringing', class: "block text-sm font-bold mb-2" %>
+          <%= form.text_field :dish, class: "px-3 py-2 border rounded-md w-5/6 md:w-1/2" %>
+        </div>
 
-    <%= form.submit 'Submit' %>
-    <% end %>
+        <div class="mb-4">
+          <%= form.label :comments, 'Additional Comments', class: "block text-sm font-bold mb-2" %>
+          <%= form.text_area :comments, class: "px-3 py-2 border rounded-md w-5/6 md:w-1/2" %>
+        </div>
 
+        <div>
+          <%= form.submit 'Submit', class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" %>
+        </div>
+      <% end %>
+    </div>
+
+
+</div>
 </div>

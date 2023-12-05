@@ -9,24 +9,22 @@
     
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-      }
-    </style>
-
   </head>
 
-  <body class="bg-cover bg-center bg-no-repeat" style="background-image: url('<%= asset_path('christmas-composition-fir-tree-branches-gifts.jpg') %>');">
+  <body class="overflow-y-auto">
+  <!-- Tailwind classes applied for a fixed background image -->
+    <div class="fixed inset-0 bg-cover bg-center bg-no-repeat z-0 h-1/2" style="background-image: url('<%= asset_path('christmas-composition-fir-tree-branches-gifts.jpg') %>');"></div>
+
+    <!-- Notice and alert divs -->
     <div id="notice" class="bg-green-500 text-white px-4 py-2 fixed w-full top-0 left-0 z-50 hidden">
       <%= notice %>
     </div>
     <div id="alert" class="bg-red-500 text-white px-4 py-2 fixed w-full top-0 left-0 z-50 hidden">
       <%= alert %>
     </div>
-    <main class="container flex">
+
+    <!-- Main container with padding for content, scrolled independently of the background -->
+    <main class="pt-4 pb-4 relative z-10">
       <%= yield %>
     </main>
   </body>

@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for christmasdishes on 2023-12-03T21:22:33-06:00
+# fly.toml app configuration file generated for christmasdishes on 2023-12-03T21:36:05-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -15,7 +15,7 @@ console_command = "/rails/bin/rails console"
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = false
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
